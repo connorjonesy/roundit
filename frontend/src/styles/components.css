@@ -1,0 +1,90 @@
+/* Vanilla UI's card/label/switch preset emits Tailwind classes. We use our own
+   explicit classes below instead, so no Tailwind setup or utility knowledge is needed.
+   Buttons use the package's plain CSS, with the theme values in theme.css. */
+.ui-card {
+  display: block;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+}
+
+.ui-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+}
+
+.ui-card-title h2 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ui-card-description {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}
+
+.ui-card-content {
+  display: block;
+  padding: 0 20px 20px;
+}
+
+.ui-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ui-switch {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 24px;
+  padding: 2px;
+  border: 0;
+  border-radius: 999px;
+  background: hsl(var(--input));
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.ui-switch[aria-checked='true'] {
+  background: hsl(var(--primary));
+}
+
+.ui-switch > span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 3px #0002;
+  transform: translateX(0);
+  transition: transform 150ms;
+  pointer-events: none;
+}
+
+.ui-switch[aria-checked='true'] > span {
+  transform: translateX(20px);
+}
+
+.ui-switch:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 3px;
+}
+
+.ui-switch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-switch,
+  .ui-switch > span {
+    transition: none;
+  }
+}

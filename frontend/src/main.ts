@@ -1,5 +1,7 @@
+import './ui/vanilla';
 import './style.css';
 import { MapLibreMapComponent } from './mapLibre';
+import { addIntersectionLayers } from './intersectionLayers';
 
 const map = new MapLibreMapComponent({
     target: '#map',
@@ -17,4 +19,8 @@ const map = new MapLibreMapComponent({
 
     minZoom: 10,
     maxZoom: 19
+});
+
+map.map.on('load', () => {
+    void addIntersectionLayers(map.map);
 });

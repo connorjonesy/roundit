@@ -2,14 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RoundIt</title>
   </head>
   <body>
     <div id="app-shell">
-      <aside id="sidebar">
-        <h1>RoundIt</h1>
+      <aside id="sidebar" aria-label="Intersection map controls">
+        <header class="sidebar-header">
+          <h1>RoundIt</h1>
+          <p class="muted-text">Explore Vancouver intersections</p>
+        </header>
+
+        <vanilla-card class="ui-card">
+          <card-header class="ui-card-header">
+            <card-title class="ui-card-title"><h2>Intersection crashes</h2></card-title>
+            <card-description class="ui-card-description">
+              <p id="data-status" role="status">Loading intersection data…</p>
+            </card-description>
+          </card-header>
+          <card-content class="ui-card-content">
+            <fieldset id="layer-controls" disabled>
+              <legend>Map layers</legend>
+              <div class="layer-row">
+                <vanilla-label class="ui-label" for="show-heatmap">Heatmap</vanilla-label>
+                <vanilla-switch class="ui-switch" id="show-heatmap" checked disabled></vanilla-switch>
+              </div>
+              <div class="layer-row">
+                <vanilla-label class="ui-label" for="show-points">Intersection points</vanilla-label>
+                <vanilla-switch class="ui-switch" id="show-points" checked disabled></vanilla-switch>
+              </div>
+            </fieldset>
+            <div class="heat-legend" aria-label="Heatmap: lower to higher relative crash concentration">
+              <div class="heat-gradient"></div>
+              <div class="legend-labels"><span>Lower</span><span>Higher</span></div>
+            </div>
+            <p class="map-note">Heat shows relative reported crash concentration. Zoom in and click a point for counts.</p>
+          </card-content>
+        </vanilla-card>
+
+        <vanilla-card class="ui-card">
+          <card-header class="ui-card-header">
+            <card-title class="ui-card-title"><h2>Reading the map</h2></card-title>
+          </card-header>
+          <card-content class="ui-card-content">
+            <p class="map-note">Counts cover the displayed reporting period. They do not measure crash probability or roundabout benefit.</p>
+          </card-content>
+        </vanilla-card>
       </aside>
 
       <main id="map-panel">

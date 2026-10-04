@@ -1,0 +1,64 @@
+/* Vanilla UI uses HSL channel values: wrap them in hsl(var(--name)) in CSS.
+   Edit colors, rounding, font, and sidebar width here to theme the whole app. */
+:root {
+  --background: 210 35% 97%;
+  --foreground: 215 35% 18%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 35% 18%;
+  --primary: 193 74% 34%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 30% 94%;
+  --secondary-foreground: 215 35% 18%;
+  --muted: 210 30% 94%;
+  --muted-foreground: 215 20% 38%;
+  --accent: 193 45% 93%;
+  --accent-foreground: 193 74% 25%;
+  --destructive: 0 62% 40%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 213 35% 89%;
+  --input: 213 30% 80%;
+  --ring: 193 74% 34%;
+  --radius: 0.75rem;
+  --font-family: 'Inter', Arial, sans-serif;
+  --sidebar-width: 400px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-family);
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.muted-text {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}

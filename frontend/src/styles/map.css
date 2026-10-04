@@ -1,0 +1,94 @@
+/* Map-only UI: heat legend, Vanilla UI navigation and popup, native scale/attribution. */
+.maplibregl-ctrl,
+.maplibregl-popup-content {
+  font-family: var(--font-family);
+}
+
+.map-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-navigation .vanilla-button {
+  font-size: 1.25rem;
+  box-shadow: 0 2px 6px #0002;
+}
+
+.map-navigation [data-action='north'] {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.heat-gradient {
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #2196c4, #64d5b2, #ffe16b, #f46d43, #b2182b);
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.map-note {
+  text-align: center;
+  margin-top: 12px;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.intersection-popup .popup-card {
+  border: 0;
+}
+
+.popup-header {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.popup-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.popup-header .vanilla-button {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  font-size: 1.25rem;
+}
+
+.popup-metrics {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  margin: 16px 0;
+  font-size: 0.875rem;
+}
+
+.popup-metrics dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Higher specificity than MapLibre defaults, without changing map internals. */
+.maplibregl-popup .maplibregl-popup-content {
+  padding: 0;
+  border-radius: var(--radius);
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  box-shadow: 0 8px 24px #0002;
+}
+
+.maplibregl-ctrl-scale {
+  border-color: hsl(var(--foreground));
+  background: hsl(var(--card) / 0.9);
+}

@@ -1,6 +1,7 @@
 import * as maplibregl from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import { MapNavigation } from './ui/mapControls';
 
 // Configure the MapLibre worker for Vite
 maplibregl.setWorkerUrl(workerUrl);
@@ -41,7 +42,7 @@ export class MapLibreMapComponent {
 
         // Add map controls
         this.map.addControl(
-            new maplibregl.NavigationControl(),
+            new MapNavigation(),
             'top-right'
         );
 
