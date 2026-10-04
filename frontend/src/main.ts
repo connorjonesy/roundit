@@ -1,10 +1,20 @@
 import './style.css';
 import { MapLibreMapComponent } from './mapLibre';
 
-new MapLibreMapComponent({
-  target: '#map',
-  center: [-123.1207, 49.2827],
-  zoom: 11,
-  pitch: 0,
-  bearing: 0,
+const map = new MapLibreMapComponent({
+    target: '#map',
+    style: 'https://tiles.openfreemap.org/styles/liberty',
+
+    // Start in Vancouver
+    center: [-123.1207, 49.2827],
+    zoom: 12,
+
+    // Restrict navigation to the Vancouver area
+    maxBounds: [
+        [-123.30, 49.18], // Southwest
+        [-122.90, 49.35]  // Northeast
+    ],
+
+    minZoom: 10,
+    maxZoom: 19
 });
