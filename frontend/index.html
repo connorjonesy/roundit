@@ -11,6 +11,14 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RoundIt</title>
+    <script type="importmap">
+    {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+     }
+    }
+    </script>
   </head>
   <body>
     <div id="app-shell">
@@ -18,6 +26,7 @@
         <header class="sidebar-header">
           <h1>RoundIt</h1>
           <p class="muted-text">Explore Vancouver intersections</p>
+          <div id="roundabout" style="width:100%; height:500px;"></div>
         </header>
 
         <vanilla-card class="ui-card">
@@ -63,5 +72,6 @@
     </div>
 
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./src/3d/main.js"></script>
   </body>
 </html>
