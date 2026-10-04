@@ -1,0 +1,6 @@
+# Local CSV experiment; no database or server dependencies.
+pandas
+numpy
+scikit-learn==1.9.1
+joblib==1.6.0
+pytest==9.1.1

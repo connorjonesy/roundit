@@ -1,0 +1,19 @@
+{
+  "source_collision_rows": 131153,
+  "canonical_intersection_rows": 5540,
+  "intersections_matched_to_coordinates": 5540,
+  "canonical_intersections_excluded_geography": 0,
+  "intersections_in_experiment": 1875,
+  "intersections_excluded_from_experiment": 3665,
+  "geographically_matched_intersections_excluded_incomplete_or_invalid": 3665,
+  "unmatched_collision_rows": 0,
+  "coordinate_crs": "EPSG:4326",
+  "id_strategy": "canonical_id_or_uuid5_exact_municipality_street_pair",
+  "diagnostic_rows_by_reason": {
+    "incomplete_2018_2022_observations_no_zero_fill": 3665
+  },
+  "input_sha256": {
+    "icbc_clean.csv": "b5be770d03b8ab69b1e732c17ad6602b38d4dace2ffec49cf184f74c08d470eb",
+    "intersections.csv": "75132c71d111183e11da07730726aee553b5bba76e12b54828a5f3d58435ab91"
+  }
+}

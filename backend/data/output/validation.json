@@ -1,0 +1,20 @@
+{
+  "checks_passed": [
+    "input SHA256 unchanged",
+    "annual source aggregation",
+    "canonical identity and geography",
+    "historical feature lags",
+    "validation-based selection",
+    "saved scaler training years",
+    "saved predictions and actual counts",
+    "scenario uniqueness and CMF arithmetic"
+  ],
+  "intersections": 1875,
+  "annual_rows": 9375,
+  "feature_rows": 5625,
+  "scenario_rows": 7500,
+  "input_sha256": {
+    "icbc_clean.csv": "b5be770d03b8ab69b1e732c17ad6602b38d4dace2ffec49cf184f74c08d470eb",
+    "intersections.csv": "75132c71d111183e11da07730726aee553b5bba76e12b54828a5f3d58435ab91"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "model_version": "roundit-historical-v1",
+  "model_class": "StandardScaler + PoissonRegressor(alpha=1.0, max_iter=1000)",
+  "package_versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0"
+  },
+  "feature_names": [
+    "last_year",
+    "avg_2yr"
+  ],
+  "selected_prediction_method": "last_year",
+  "selection_rule": "lowest validation MAE; prefer baseline on exact ties",
+  "validation_training_target_years": [
+    2020
+  ],
+  "validation_target_year": 2021,
+  "saved_model_training_target_years": [
+    2020,
+    2021
+  ],
+  "test_target_year": 2022,
+  "history_years": [
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "validation_mae": {
+    "poisson": 6.768510227416739,
+    "last_year": 3.2933333333333334,
+    "avg_2yr": 3.3464
+  },
+  "test_mae": {
+    "poisson": 7.564808883413579,
+    "last_year": 3.567466666666667,
+    "avg_2yr": 3.4674666666666667
+  },
+  "intersections_evaluated": 1875,
+  "training_observations": 3750,
+  "test_strata_previous_year_cutoff": 7.0,
+  "test_strata": {
+    "low": {
+      "intersections": 1156,
+      "mae": {
+        "poisson": 3.570174624324784,
+        "last_year": 2.226643598615917,
+        "avg_2yr": 2.0808823529411766
+      }
+    },
+    "high": {
+      "intersections": 719,
+      "mae": {
+        "poisson": 13.987336287456205,
+        "last_year": 5.723226703755215,
+        "avg_2yr": 5.696801112656467
+      }
+    }
+  },
+  "saved_model_role": "historical evaluation pipeline; not refitted on 2022 targets",
+  "forecast_scope": "held-out historical 2022 predictions, not validated 2026 forecasts",
+  "preparation": {
+    "source_collision_rows": 131153,
+    "canonical_intersection_rows": 5540,
+    "intersections_matched_to_coordinates": 5540,
+    "canonical_intersections_excluded_geography": 0,
+    "intersections_in_experiment": 1875,
+    "intersections_excluded_from_experiment": 3665,
+    "geographically_matched_intersections_excluded_incomplete_or_invalid": 3665,
+    "unmatched_collision_rows": 0,
+    "coordinate_crs": "EPSG:4326",
+    "id_strategy": "canonical_id_or_uuid5_exact_municipality_street_pair",
+    "diagnostic_rows_by_reason": {
+      "incomplete_2018_2022_observations_no_zero_fill": 3665
+    },
+    "input_sha256": {
+      "icbc_clean.csv": "b5be770d03b8ab69b1e732c17ad6602b38d4dace2ffec49cf184f74c08d470eb",
+      "intersections.csv": "75132c71d111183e11da07730726aee553b5bba76e12b54828a5f3d58435ab91"
+    }
+  }
+}
