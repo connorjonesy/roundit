@@ -11,7 +11,12 @@ lorem ipsum
 
 * serve the backend with uvicorn: `uvicorn main:app --reload`
 
-* serve the frontend with vite: `npm run dev`
+* serve the frontend with vite: 
+
+`npm install`
+
+`npm run dev`
+
 
 INGEST is run locally, not part of our deployment, ingest requirements are local only 
 
@@ -38,7 +43,4 @@ pip install -r requirements-ingest.txt
 ### PROD
 
 * render backend
-
-* frontend: `npm run build`
-
 
