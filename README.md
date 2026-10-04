@@ -4,7 +4,9 @@
 
 lorem ipsum. :)
 
-# Have you ever crossed an intersection and felt unsafe. Yeah. Us too. Welcome to roundit. We imagine a world in which intersections are removed, and in their place, roundabouts rule the world. Pedestrians can cross safely, cars are forced to slow down, drivers focus more, cyclists remain unscathed. 
+# Have you ever crossed an intersection and felt unsafe. Yeah. Us too. 
+
+### Welcome to roundit. We imagine a world in which intersections are removed, and in their place, roundabouts rule the world. Pedestrians can cross safely, cars are forced to slow down, drivers focus more, cyclists remain unscathed. 
 
 #### Contributing Notes
 
