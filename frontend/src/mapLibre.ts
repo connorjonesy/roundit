@@ -1,5 +1,9 @@
 import * as maplibregl from 'maplibre-gl';
+import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import 'maplibre-gl/dist/maplibre-gl.css';
+
+// Configure the MapLibre worker for Vite
+maplibregl.setWorkerUrl(workerUrl);
 
 export interface MapLibreMapComponentOptions
     extends Partial<maplibregl.MapOptions> {
@@ -12,7 +16,7 @@ export class MapLibreMapComponent {
     constructor({
         target,
         style = 'https://tiles.openfreemap.org/styles/liberty',
-        center = [-122.9805, 49.2488],
+        center = [-123.1207, 49.2827],
         zoom = 12,
         ...mapOptions
     }: MapLibreMapComponentOptions) {
@@ -45,5 +49,14 @@ export class MapLibreMapComponent {
             new maplibregl.ScaleControl(),
             'bottom-left'
         );
+
+        // Debug map loading
+        this.map.on('load', () => {
+            console.log('Map loaded successfully!');
+        });
+
+        this.map.on('error', (e) => {
+            console.error('MapLibre error:', e.error);
+        });
     }
 }
