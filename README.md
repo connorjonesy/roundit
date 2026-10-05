@@ -8,6 +8,12 @@ lorem ipsum. :)
 
 ### Welcome to roundit. We imagine a world in which intersections are removed, and in their place, roundabouts rule the world. Pedestrians can cross safely, cars are forced to slow down, drivers focus more, cyclists remain unscathed. 
 
+[Translink's 2040 Transportation Plan](https://vancouver.ca/files/cov/transportation-2040-plan.pdf) aims to create zero traffic related fatalities, we want to aid in that effort. 
+
+Roundabouts have been proven to significantly reduce intersection collisions around the world. They help keep every type of road user safe. 
+
+Our goal was to identify intersections with high collision rates and help determine which of them could benefit from being redesigned as roundabouts. By making collision data more accessible, we hope to encourage safer and more informed urban planning decisions in Vancouver. 
+
 #### Contributing Notes
 
 ### Dev environemnt
