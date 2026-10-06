@@ -13,8 +13,8 @@ const map = new MapLibreMapComponent({
 
     // Restrict navigation to the Vancouver area
     maxBounds: [
-        [-123.30, 49.18], // Southwest
-        [-122.90, 49.35]  // Northeast
+        [-123.46, 48.98], // Southwest: [west, south]
+        [-122.38, 49.59]  // Northeast: [east, north]
     ],
 
     minZoom: 10,
