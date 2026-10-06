@@ -1,4 +1,4 @@
-"""Clean ICBC data and export Vancouver intersection CSVs."""
+"""Clean ICBC data and export British Columbia intersection CSVs."""
 
 import argparse
 from pathlib import Path
@@ -8,8 +8,9 @@ import numpy as np
 import pandas as pd
 
 DATASET = "tcashion/icbc-vehicle-crash-dataset/versions/2"
-# Provisional study rectangle matching the frontend, not an official city boundary.
-STUDY_BOUNDS = (-123.30, 49.18, -122.90, 49.35)
+# Approximate British Columbia extent, used to reject invalid out-of-province
+# coordinates while retaining municipalities throughout the province.
+STUDY_BOUNDS = (-139.1, 48.2, -114.0, 60.1)
 YES = {"YES", "Y", "TRUE", "1"}
 NO = {"NO", "N", "FALSE", "0"}
 UNKNOWN_NAMES = {"", "UNKNOWN", "NOT AVAILABLE", "N/A", "NA", "NULL"}
@@ -77,9 +78,8 @@ def clean_data(raw, max_distance_m=100, max_year=None):
     flags = {**dict.fromkeys(YES, "yes"), **dict.fromkeys(NO, "no")}
     for col in ["intersection_crash", "pedestrian_flag", "cyclist_flag"]:
         data[col] = data[col].astype("string").str.strip().str.upper().map(flags).fillna("unknown")
-    # Unknown intersection flags in Vancouver are retained for review.
-    data = data.loc[data["municipality"].eq("VANCOUVER")
-                    & data["intersection_crash"].ne("no")].copy()
+    # Unknown intersection flags are retained for review.
+    data = data.loc[data["intersection_crash"].ne("no")].copy()
     for col in ["street", "cross_street"]:
         data[col] = (data[col].str.replace(r"\s+", " ", regex=True)
                      .str.replace(r"[.,]", "", regex=True))

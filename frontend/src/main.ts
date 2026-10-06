@@ -7,17 +7,17 @@ const map = new MapLibreMapComponent({
     target: '#map',
     style: 'https://tiles.openfreemap.org/styles/liberty',
 
-    // Start in Vancouver
-    center: [-123.1207, 49.2827],
-    zoom: 12,
+    // Start with a province-wide view of British Columbia.
+    center: [-124.5, 54.5],
+    zoom: 5,
 
-    // Restrict navigation to the Vancouver area
+    // Restrict navigation to British Columbia.
     maxBounds: [
-        [-123.46, 48.98], // Southwest: [west, south]
-        [-122.38, 49.59]  // Northeast: [east, north]
+        [-139.1, 48.2], // Southwest: [west, south]
+        [-114.0, 60.1]  // Northeast: [east, north]
     ],
 
-    minZoom: 10,
+    minZoom: 4,
     maxZoom: 19
 });
 
